@@ -24,4 +24,4 @@ We can use positive look ahead
 ```
 /@.+(?=\.[a-z]{2,4})/g
 ```
-start matching from **@**, and any character **.** 1 or more **+**, this will match to the end of the urls. Now we need to exclude the extensions. We use **?=** to look ahead, there must be a **.** and **[a-z]{2,4}** means any letters between 2 and 4.
+start matching from **@**, and any character **.** 1 or more **+**, this will match to the end of the urls. Now we need to exclude the extensions. We use **?=** to look ahead, there must be a **.** and **[a-z]{2,4}** means any letter combinations between 2 and 4 letters.
