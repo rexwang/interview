@@ -42,4 +42,7 @@ We want to stripe out the href attribute in an anchor tag
 ```
 <a href="http://tutsplus.com">Visit Our Site</a>
 ```
-
+we can use something like this
+```
+/href=["']([^"]+)["']/g
+```
