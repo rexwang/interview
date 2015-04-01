@@ -37,3 +37,8 @@ box-(?:shadow|sizing)
 ```
 where **?:** means non-capturing group.
 
+## Stripping Out an Anchor Tag's Attributes
+We want to stripe out the href attribute in an anchor tag
+  <a href="http://tutsplus.com">Visit Our Site</a>
+
+
