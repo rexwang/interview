@@ -62,7 +62,7 @@ We can use this regex
 ```
 /^.+?@.+\.[a-z]{2,4}$/igm
 ```
-**^** means from the beginning of the line(when m flag is on)
-**.+?** means one or more of any character, and non greedy
-**[a-z]{2,4}** means any characters(i flag is on) between 2 and 4 of numbers
-**$** means end of line
+**^** means from the beginning of the line(when m flag is on).
+**.+?** means one or more of any character, and non greedy.
+**[a-z]{2,4}** means any characters(i flag is on) between 2 and 4 of numbers.
+**$** means end of line.
