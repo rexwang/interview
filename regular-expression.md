@@ -46,3 +46,23 @@ we can use something like this
 ```
 /href=["']([^"]+)["']/g
 ```
+
+## Matching email address
+If we want to match legit email addresses in the following
+```
+rex@envato.com
+notreal@email
+je@jef-way.com
+maemail.com
+fake@fake.buygoods
+joe@example.uk.com
+rex-wang@gmail.com
+```
+We can use this regex
+```
+/^.+?@.+\.[a-z]{2,4}$/igm
+```
+**^** means from the beginning of the line(when m flag is on)
+**.+?** means one or more of any character, and non greedy
+**[a-z]{2,4}** means any characters(i flag is on) between 2 and 4 of numbers
+**$** means end of line
