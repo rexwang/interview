@@ -78,6 +78,6 @@ If the string starts with *h*, we want to match *hog*, else we want to match *lo
 
     /^(?(?=h)hog|log)/gm
     
-**^** means evaluates each line
-**(?(condition)then|else)** this is how we use conditional statement in regex
-**(?=h)** means look at the first character, is it *h*?
+**^** means evaluates each line<br/>
+**(?(condition)then|else)** this is how we use conditional statement in regex<br/>
+**(?=h)** means look at the first character, is it *h*?<br/>
