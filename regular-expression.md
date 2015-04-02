@@ -66,3 +66,18 @@ We can use this regex
 **.+?** means one or more of any character, and non greedy<br/>
 **[a-z]{2,4}** means any characters(i flag is on) between 2 and 4 of numbers<br/>
 **$** means end of line
+
+## Conditional Regex
+We can have conditional statement in regex. For example, if we have the following strings
+
+    hog
+    coz
+    log
+    
+If the string starts with *h*, we want to match *hog*, else we want to match *log*. We can do this with the following regex
+
+    /^(?(?=h)hog|log)/gm
+    
+**^** means evaluates each line
+**(?(condition)then|else)** this is how we use conditional statement in regex
+**(?=h)** means look at the first character, is it *h*?
