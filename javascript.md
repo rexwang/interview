@@ -26,3 +26,11 @@ var b = [4,5,6];
 Array.prototype.push.apply(a, b);
 console.log(a); // [1,2,3,4,5,6]
 ```
+Condition
+```
+var a = b && 1;
+is smilar with
+if (b) {
+  a = 1;
+}
+```
