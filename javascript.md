@@ -46,7 +46,7 @@ if (b) {
   a = 1;
 }
 ```
-Interchange value of two variables
+Interchange value of two variables without creating temp variable
 ```
 var a = 1;
 var b = 2;
