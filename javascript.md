@@ -1,4 +1,6 @@
-# Javascript Interview Questions
+# Interview Questions
+
+## Javascript
 
 ### Useful tricks
 Get integer and change data type at the same time
