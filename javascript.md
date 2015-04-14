@@ -1,26 +1,25 @@
 # Javascript Interview Questions
 
 ### Useful tricks
-1. Get integer and change data type at the same time
+Get integer and change data type at the same time
 ```
 '10.567890'|0  // 10
 '10.567890'^0  // 10
 -2.23456789|0  // -2
 ```
-
-2. Change date to number
+Change date to number
 ```
 var d = +new Date(); // 1295698416972
 ```
-3. Object like array to array
+Object like array to array
 ```
 var arr = [].slice.call(arguments);
 ```
-4. Random numbers
+Random numbers
 ```
 Math.random().toString(16).substring(2); // 14 digits
 ```
-5. Combine arrays
+Combine arrays
 ```
 var a = [1,2,3];
 var b = [4,5,6];
