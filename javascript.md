@@ -1,8 +1,6 @@
-# Interview Questions
+# Javascript Interview Questions
 
-## Javascript
-
-#### Useful tricks
+### Useful tricks
 Get integer and change data type at the same time
 ```
 '10.567890'|0  // 10
