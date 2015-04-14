@@ -35,7 +35,7 @@ is smilar with
 if (b) {
   a = 1;
 }
-
+-------------------------------------------
 var a = b || 1;
 
 is smilar with
