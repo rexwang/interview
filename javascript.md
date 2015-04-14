@@ -3,10 +3,11 @@
 ### Useful tricks
 1. Get integer and change data type at the same time
 ```
-  '10.567890'|0  // 10
-  '10.567890'^0  // 10
-  -2.23456789|0  // -2
+'10.567890'|0  // 10
+'10.567890'^0  // 10
+-2.23456789|0  // -2
 ```
+
 2. Change date to number
 ```
 var d = +new Date(); // 1295698416972
