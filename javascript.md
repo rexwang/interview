@@ -1,7 +1,7 @@
 # Javascript Interview Questions
 
 ### Useful tricks
-Get integer and change data type at the same time
+####Get integer and change data type at the same time
 ```
 '10.567890'|0  // 10
 '10.567890'^0  // 10
