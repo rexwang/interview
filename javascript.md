@@ -77,3 +77,4 @@ var symbols = getStockSymbols([
 
 console.log(JSON.stringify(symbols));
 ```
+output: #"[\"XFX\",\"TNZ\",\"JXJ\"]"#
