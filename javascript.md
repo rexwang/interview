@@ -7,26 +7,26 @@
 '10.567890'^0  // 10
 -2.23456789|0  // -2
 ```
-Change date to number
+##### Change date to number
 ```
 var d = +new Date(); // 1295698416972
 ```
-Object like array to array
+##### Object like array to array
 ```
 var arr = [].slice.call(arguments);
 ```
-Random numbers
+##### Random numbers
 ```
 Math.random().toString(16).substring(2); // 14 digits
 ```
-Combine arrays
+##### Combine arrays
 ```
 var a = [1,2,3];
 var b = [4,5,6];
 Array.prototype.push.apply(a, b);
 console.log(a); // [1,2,3,4,5,6]
 ```
-Condition
+##### Condition
 ```
 var a = b && 1;
 
@@ -46,7 +46,7 @@ if (b) {
   a = 1;
 }
 ```
-Interchange value of two variables without creating temp variable
+##### Interchange value of two variables without creating temp variable
 ```
 var a = 1;
 var b = 2;
@@ -57,4 +57,4 @@ console.log(b); // 1
 
 ### Asynchronous Programming
 
-forEach loop
+##### forEach loop
