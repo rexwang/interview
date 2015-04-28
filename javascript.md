@@ -79,7 +79,7 @@ console.log(JSON.stringify(symbols));
 ```
 output: *"[\"XFX\",\"TNZ\",\"JXJ\"]"*
 
-##### Array Map Function
+##### Array Map Function, great for apply transformation to every item in the array and returns a new array
 ```
 function getStockSymbols(stocks) {
   return stocks.map(function(stock) {
