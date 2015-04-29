@@ -48,3 +48,7 @@ foo({
 This is why you see JSONP requests containing the *callback* parameter; so the server knows the name of the function to wrap the response around.
 
 This function must exit in the global scope at the time the *\<script\>* tag is evaluated by the browser (once the request has completed).
+
+The usefulness of using jQuery to make JSONP requests, is that jQuery does alllllllll of the work for you in the background.
+
+jQuery requires (by default), for you to include &callback=? in the URL of your AJAX request. jQuery will take the success function you specify, assign it a unique name and publish it in the global scope. It will then replace the **?** in **&callback=?** with the name it's just assigned the function.
