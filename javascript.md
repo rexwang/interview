@@ -124,3 +124,32 @@ var expensiveStocks = getStocksOver([
 
 console.log(JSON.stringify(expensiveStocks));
 ```
+
+### Javascript Memoization Pattern
+```
+function memoize(func) {
+  var memo = {},
+      slice = Array.prototype.slice;
+  
+  return function() {
+    var cacheKey = slice.call(arguments);
+    if (cacheKey in memo) {
+      console.log('reading cached data');
+      return memo[cacheKey];
+    } else {
+      console.log('adding data to cache');
+      return (memo[cacheKey] = func.apply(this, cacheKey));
+    }
+  };
+}
+```
+Useage:
+```
+function add(x, y) {
+  return x + y;
+}
+
+var newAdd = memoize(add);
+console.log(newAdd(3,4));
+console.log(newAdd(3,4));
+```
