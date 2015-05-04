@@ -127,7 +127,7 @@ console.log(JSON.stringify(expensiveStocks));
 
 ### Javascript Design Pattern
 
-##### Memoiztion Pattern
+##### Memoization Pattern
 ```
 function memoize(func) {
   var memo = {},
@@ -156,7 +156,7 @@ console.log(newAdd(3,4));
 console.log(newAdd(3,4));
 ```
 
-###### Singleton Pattern
+##### Singleton Pattern
 ```
 var mySingleton = (function() {
   var instance;
