@@ -155,3 +155,27 @@ var newAdd = memoize(add);
 console.log(newAdd(3,4));
 console.log(newAdd(3,4));
 ```
+
+###### Singleton Pattern
+```
+var mySingleton = (function() {
+  var instance;
+  function init() {
+    function privateMethod() {}
+    return {
+      publicMethod: function() {},
+      publicProperty: 'I am public'
+    }
+  }
+  
+  return {
+    getInstance: function() {
+      if (!instance) {
+        instance = init();
+      }
+      return instance;
+    }
+  }
+}());
+```
+
