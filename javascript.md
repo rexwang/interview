@@ -179,3 +179,34 @@ var mySingleton = (function() {
 }());
 ```
 
+##### Observer Pattern
+```
+var Subject = (function() {
+  function Subject() {
+    this._list = [];
+  }
+  
+  Subject.prototype.observe = function(obj) {
+    this._list.push(obj);
+  };
+  
+  Subject.prototype.unobserve = function(obj) {
+    for (var i = 0; i < this._list.length; i++) {
+      if (this._list[i] === obj) {
+        this._list.splice(i, 1);
+        return true;
+      }
+    }
+    return false;
+  };
+  
+  Subject.prototype.notify = function() {
+    var args = Array.prototype.slice.call(arguments, 0);
+    for (var i = 0; i < this._list.length; i++) {
+      this._list[i].update.apply(null, args);
+    }
+  };
+  
+  return Subject;
+}());
+```
