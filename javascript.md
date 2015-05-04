@@ -125,7 +125,9 @@ var expensiveStocks = getStocksOver([
 console.log(JSON.stringify(expensiveStocks));
 ```
 
-### Javascript Memoization Pattern
+### Javascript Design Pattern
+
+##### Memoiztion Pattern
 ```
 function memoize(func) {
   var memo = {},
