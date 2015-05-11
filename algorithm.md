@@ -32,11 +32,21 @@ function selectionSort(A) {
 ```
 ##### Insertion Sort
 ```
-for i <- 1 to length(A) - 1
-    j <- i
-    while j > 0 and A[j-1] > A[j]
-      swap A[j] and A[j-1]
-      j <- j - 1
-    end while
-end for
+function insertionSort(A) {
+  var i,
+      j,
+      temp;
+  
+  for (i = 0; i < A.length - 1; i++) {
+    for (j = i + 1; j < A.length; j++) {
+      if (A[i] > A[j]) {
+        temp = A[i];
+        A[i] = A[j];
+        A[j] = temp;
+      }
+    }
+  }
+  
+  return A;
+}
 ```
