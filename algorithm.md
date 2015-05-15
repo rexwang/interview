@@ -104,3 +104,42 @@ function merge(left, right) {
   return result;
 }
 ```
+##### Quick Sort
+Quick Sork is unstable sorting algorithm. It does not require extra memory space, it's inplace sorting.
+```
+function qsort(A, lo, hi) {
+  if (lo < hi) {
+    p = partition(A, lo, hi);
+    qsort(A, lo, p - 1);
+    qsort(A, p + 1, hi);
+  }
+}
+
+function partition(A, lo, hi) {
+  var pivotIndex = lo,
+      pivotValue = A[pivotIndex],
+      storeIndex;
+      
+  // Put the chosen pivot at A[hi]
+  swap(A, pivotIndex, hi);
+  storeIndex = lo;
+  
+  for (var i = lo; i < hi; i++) {
+    if (A[i] <= pivotValue) {
+      swap(A, i, storeIndex);
+      storeIndex++;
+    }
+  }
+  
+  // move the pivot to its final place
+  swap(A, storeIndex, hi);
+  
+  return storeIndex;
+}
+
+function swap(A, a, b) {
+  var temp = A[a];
+  A[a] = A[b];
+  A[b] = temp;
+}
+```
