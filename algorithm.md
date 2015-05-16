@@ -143,3 +143,61 @@ function swap(A, a, b) {
   A[b] = temp;
 }
 ```
+##### Heapsort
+```
+funtion heapsort(A, count) {
+  var end = count - 1;
+  heapify(A, count);
+  while (end > 0) {
+    swap(A, end, 0);
+    // heap size reduced by 1.
+    end--;
+    // the swap ruined the heap order, restore it.
+    shiftDown(A, 0, end);
+  }
+}
+
+function heapify(A, count) {
+  // start is the last parent node.
+  // the last element in a 0-base array is at index count-1; find the parent of that element
+  var start = Math.floor((count - 2) / 2);
+  
+  while (start >= 0) {
+    shiftDown(A, start, count - 1);
+    // go to next parent node.
+    start--;
+  }
+  
+  // after shifting down the root all nodes/elements are in heap order
+}
+
+function shiftDown(A, start, end) {
+  var root = start,
+      child,
+      swa;
+    
+  // while the root has at least one child  
+  while (root * 2 + 1 <= end) {
+    child = root * 2 + 1; // left child
+    swa = root; // keep track of child to swap with
+    
+    if (A[swa] < A[child]) {
+      swa = child;
+    }
+    
+    // if there is a right child and that child is greater
+    if (child + 1 <= end && A[swa] <= A[child+1]) {
+      swa = child + 1;
+    }
+    
+    if (swa == root) {
+      // the root holds the largest element.
+      return;
+    } else {
+      swap(A, root, swa);
+      // update root index
+      root = swa;
+    }
+  }
+}
+```
