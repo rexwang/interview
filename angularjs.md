@@ -46,3 +46,32 @@ app.directive('kid', function() {
   };
 });
 ```
+##### String @
+```
+<div ng-app="phoneApp">
+  <div ng-controller="AppCtrl">
+    <drink flavor="{{ctrlFlavor}}"></drink>
+  </div>
+</div>
+```
+```
+var app = angular.module('phoneApp', []);
+
+app.controller('AppCtrl', function($scope) {
+  $scope.ctrlFlavor = 'black burry';
+});
+
+app.directive('drink', function() {
+  return {
+    scope: {
+      flavor: '@'
+    },
+    // Here whatever is inside the flavor attribute will be evaluated
+    // as a string and passed in the template. This is why the binding
+    // in controller still works, because the 'ctrlFlavor' is evaluated
+    // as a string, its value is 'black burry', then the string
+    // 'black burry' is passed into template.
+    template: '<div>{{flavor}}</div>'
+  };
+});
+```
