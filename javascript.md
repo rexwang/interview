@@ -210,3 +210,24 @@ var Subject = (function() {
   return Subject;
 }());
 ```
+
+##### Decorator Pattern
+A function decorator accepts a function, decorates it's call and returns the wrapper, which alters default behavior. For example, a doublingDecorator accepts a function func and returns the decorated variant which doubles the result
+```
+function doublingDecorator(func) {
+  return function() {
+    return 2 * func.apply(this, arguments);
+  };
+}
+```
+```
+// Useage:
+function sum(a, b) {
+  return a + b;
+}
+
+var doubleSum = doublingDecorator(sum);
+
+doubleSum(1,2); // 6
+doubleSum(2,3); // 10
+```
