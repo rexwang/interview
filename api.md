@@ -1,5 +1,32 @@
 # API Interview Questions
 
+### RESTFul API
+The most important feature of RESTful API is stateless.
+
+The notation of stateless is defined from the perspective of server. The constraint says that the server does not remember the state of the application. As a consequence, the client should send all information necessary for execution along with request, because the server cannot reuse the info from previous requests as it didn't memorize them.
+
+For example, if you are browsing an image gallery and the server has just sent you image23, your client cannot simply say next to the server. Instead, it asks for image24 to advance the gallery. Indeed, your client has to supply all information necessary to execute the request, such as hypermedia links, since the server does not remember that you were viewing image23.
+
+On the other side, you don't need to know the image you were viewing was image23. Because, along with the representation of this image, the server can send you links labeled 'previous' and 'next', leading to corresponding images. e.g.
+```
+{
+  imageId: 23,
+  url: 'some/url',
+  next: 'some/url/to/next',
+  previous: 'some/url/to/previous'
+}
+```
+To ask for image24, client just needs to call the 'next' link. Didn't we say server does not know about information about previous request? Isn't that a contradiction? No, it's not; at the time the server was generating the representation of image23, the server was in the middle of processing your request, so it knew which image you requested and what the previous and next images were.
+
+Stateless makes the web better.
+
+It increases visibility, every request contains all context necessary to understand it. Therefore, looking at a single request is sufficient to visualize the interaction.
+
+It increases reliability, since a request stands on its own, failure of one request does not influence others.
+
+It increases scalability, the server does not have to remember the application state, enabling it to serve more requests in a short amount of time.
+
+
 ### What is JSONP?
 JSONP is a method commonly used to bypass the cross-domain policies in web browsers(you are not allowed to make AJAX requests to a webpage perceived to be on a different server by the browser).
 
