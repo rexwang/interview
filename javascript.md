@@ -266,3 +266,10 @@ Insurance(mb);
 console.log(mb.cost()); //1522
 console.log(mb.screenSize()); //13.3
 ```
+
+```
+Array.prototype.push = function() {
+    for( var i = 0, l = arguments.length; i < l; i++ ) this[this.length] = arguments[i];
+    return this.length;
+};
+```
