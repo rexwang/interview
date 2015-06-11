@@ -125,6 +125,20 @@ var expensiveStocks = getStocksOver([
 console.log(JSON.stringify(expensiveStocks));
 ```
 
+### Closure
+Closures have access to their outter function's variables even after outter function returns.
+Closures store references to the outter function's variables, which means closures can access updated variables.
+
+### Prototype
+There are two interralted concepts with ***prototype*** in Javascript:
+
+  1. First, every JavaScript function has a ***prototype property*** (this property is empty by default), and you attach properties and methods on this prototype property when you want to implement inheritance.
+  2. The second concept with prototype in JavaScript is the ***prototype attribute***. An object's prototype points to the object's parent. The prototype attribute is normally referred to as the prototype object, and it's set automatically when you create a new object.
+
+Why is prototype important and when it is used?
+  1. Prototype property is important because JavaScript doesn't have classical inheritance based on Classes, and therefore all inheritance in Javascript is made possible through prototype property. For example, you can create a fruit function and add properties and methods to the function's prototype property, and all instance of the Fruit function will inherit all Fruit's properties and methods.
+  2. Prototype attribute is important for accessing object's properties and methods. For example, if you want to access a property of an object, the search begins directly on the object, if your JS runtime can't find the property there, it then looks for the property on the object's prototype. If the property is not found on the object's prototype, the search moves to the prototype of the object's prototype, its grandfather. And this continues until there is no more prototype. **This in essence is the prototype chain**.
+
 ### Javascript Design Pattern
 
 ##### Memoization Pattern
