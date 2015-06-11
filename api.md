@@ -79,3 +79,19 @@ This function must exit in the global scope at the time the *\<script\>* tag is 
 The usefulness of using jQuery to make JSONP requests, is that jQuery does alllllllll of the work for you in the background.
 
 jQuery requires (by default), for you to include &callback=? in the URL of your AJAX request. jQuery will take the success function you specify, assign it a unique name and publish it in the global scope. It will then replace the **?** in **&callback=?** with the name it's just assigned the function.
+
+### JSON vs XML
+JSON Pro:
+  1. Simple syntax, which results in less 'markup' overhead compared to XML.
+  2. Easy to use with JavaScript as the markup is a subset of Javascript object literal notation and has the same datatype as Javascript.
+
+JSON Con:
+  1. Only a handful of different datatypes are supported.
+
+XML Pro:
+  1. XPath/XQuery for extracting information (which makes getting information in deeply nested structures much easier than with JSON).
+  2. XSLT for transformation into different output formats.
+  3. XML Schema for datatype, structure validation. Makes it possible to create new datatypes.
+
+XML Con:
+  1. It's wordy compared to JSON(result in more data for the same amount of infomation).
