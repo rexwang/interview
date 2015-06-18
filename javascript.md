@@ -287,3 +287,12 @@ Array.prototype.push = function() {
     return this.length;
 };
 ```
+##### Dependency Injection
+There are three ways a component(object or function) holds its dependencies.
+  1. The component can create the dependency, typically by calling the new operator.
+  2. The component can look up the dependency, by referring to a global variable.
+  3. The component can have the dependency passed to it where it is needed.
+
+The first two options of creating or looking up dependencies are not optimal because they hard code the dependency to the component. This makes it difficult to modify the dependency. This is especially problematic in tests, where it is often desirable to to provide mock dependencies for test isolation.
+
+The third one is more viable, since it removes the responsibility of locating the dependency from the component. The dependency is simply given to the component.
