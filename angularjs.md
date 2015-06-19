@@ -99,3 +99,15 @@ app.factory('myFactory', function() {
   }
 });
 ```
+### Directive's Injecting, Compiling, and Linking functions
+When you create a directive, there are essentially up to 3 functions layers for you to define:
+##### Compile
+This is where angular actually compiles your directive. This compile function is called just once for each references to the given directive. For example, say you are using the ng-repeat directive. ng-repeat will have to look up the element it is attached to, extract the html fragment that it is attached to and create a template function. To this template function you pass data and the return value of that function is the html with the data in the right places.
+
+The compilation phase in Angularjs returns the template function. This template function is called **linking** function.
+
+##### Linking phase
+The linking phase is where you attach the data($scope) to the linking function and it should return your linked html. This is the function where you want to make changes to the linked html. In Angular if you write code in the linking function, it's generally the post-link function(by default). It is kind of a callback that gets called after the linking function has linked the data with the template.
+
+##### Controller
+The controller is a place where you put in some directive logic. This logic can go into the linking function as well, but then you would have to put that logic on the scope to make it "shareable". The problem with that is you would then be corrupting the socpe with your directives stuff which is not really something that is expected. So what is the alternative if two directives want to talk to each other? Of course you can put that logic into a service and then make both of directives depend on that service but that just bring in more dependency. The alternative is to provide a Controller for this scope(usually isloated scope), and then this controller is injected into another directive when that directive "requires" the other one.
