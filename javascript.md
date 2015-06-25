@@ -296,3 +296,27 @@ There are three ways a component(object or function) holds its dependencies.
 The first two options of creating or looking up dependencies are not optimal because they hard code the dependency to the component. This makes it difficult to modify the dependency. This is especially problematic in tests, where it is often desirable to to provide mock dependencies for test isolation.
 
 The third one is more viable, since it removes the responsibility of locating the dependency from the component. The dependency is simply given to the component.
+
+### JavaScript Promises and Deferred
+Promises are a programming concept that have been around since 1976. In short:
+  1. a promise represents a value that is not yet know.
+  2. a deferred represents work that is not yet done.
+
+![alt text](http://www.mediumequalsmessage.com/blog-images/promises.png "Logo Title Text 1")
+
+A promise has 3 possible states: unfulfilled, fulfilled and failed. A promise can only move from unfulfilled to either fulfilled or failed. Upon resolution or rejection, any observers are notified and passed the promise/value. Once the promise has been resolved or rejected neither its state or the resulting value can be modified.
+
+This is an example what a promise looks like:
+```
+var futureValue = new Promise();
+
+// then() will return a new promise
+var anotherFutureValue = futureValue.then();
+
+// Promise state handlers
+// The returned value of the fulfilled / failed handler will be the value of the promise.
+futureValue.then({
+  fulfillHandler: function() {},
+  errorHandler: function() {},
+  progressHandler: function() {}
+});
