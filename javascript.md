@@ -55,6 +55,22 @@ console.log(a); // 2
 console.log(b); // 1
 ```
 
+##### Inplace reverse an array
+```
+functio inplaceReverse(arr) {
+  var i = 0;
+  while (i < arr.length - 1) {
+    arr.splice(i, 0, arr.pop());
+    i++;
+  }
+  return arr;
+}
+
+// Useage:
+var arr = [1, 2, 3, 4];
+console.log(inplaceReverse(arr));
+```
+
 ### Asynchronous Programming
 
 ##### forEach loop
