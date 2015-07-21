@@ -71,6 +71,13 @@ var arr = [1, 2, 3, 4];
 console.log(inplaceReverse(arr));
 ```
 
+##### Reverse the order of letters for each word in a string
+```
+var string = "erehT era a tsav rebmun fo secruoser rof gninrael erom tpircsavaJ";
+string.split("").reverse().join("").split(" ").reverse().join(" ");
+// There are a vast number of resources for learning more Javascript
+```
+
 ### Asynchronous Programming
 
 ##### forEach loop
