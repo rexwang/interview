@@ -148,6 +148,18 @@ var expensiveStocks = getStocksOver([
 console.log(JSON.stringify(expensiveStocks));
 ```
 
+##### Test if an object is empty
+```
+Object.prototype.isEmpty = function() {
+  for (var prop in this) {
+    if (this.hasOwnProperty(prop)) {
+      return false;
+    }
+  }
+  return true;
+};
+```
+
 ### Closure
 Closures have access to their outter function's variables even after outter function returns.
 Closures store references to the outter function's variables, which means closures can access updated variables.
