@@ -355,3 +355,38 @@ futureValue.then({
   errorHandler: function() {},
   progressHandler: function() {}
 });
+
+### Javascript Function currying
+```
+function add(x, y) {
+  if (typeof y === 'undefined') {
+    return function(y) {
+      return x + y;
+    };
+  }
+}
+
+var add2000 = add(2000);
+console.log(add2000(1)); // 2001
+```
+A general-purpose currying function:
+```
+function makeCurry(func) {
+  var slice = Array.prototype.slice,
+      store_args = slice.call(arguments, 1);
+  
+  return function() {
+    var new_args = slice.call(arguments),
+        args = store_args.concat(new_args);
+        
+    return func.apply(null, args);
+  };
+}
+
+function add(x, y) {
+  return x + y;
+}
+
+var newAdd = makeCurry(add, 5);
+console.log(newAdd(4));
+```
