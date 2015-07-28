@@ -78,6 +78,36 @@ string.split("").reverse().join("").split(" ").reverse().join(" ");
 // There are a vast number of resources for learning more Javascript
 ```
 
+##### parensMatch
+```
+function parensMatch(str) {
+  var parens = "()[]{}",
+      stack = [],
+      parensPosition;
+
+  for (var i = 0; i < str.length; i++) {
+    parensPosition = parens.indexOf(str[i]);
+
+    if (parensPosition === -1) {
+      // Return false if the string contains other characters
+      return false;
+    }
+
+    if (parensPosition % 2 === 0) {
+      stack.push(parensPosition + 1);
+    } else {
+      if (stack.pop() !== parensPosition) {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0;
+}
+
+console.log(parensMatch('{([]())}'));
+```
+
 ### Asynchronous Programming
 
 ##### forEach loop
